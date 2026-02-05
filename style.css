@@ -10,11 +10,11 @@
 }
 
 :root {
-    --bg-color: #fff;
-    --snd-bg-color: #d5fdf9;
-    --text-color: #000;
-    --main-color: #007f73;
-
+    --bg-color: #ffffff;           /* Pure white for clean look */
+    --snd-bg-color: #e8f7ff;       /* Very light sky blue */
+    --text-color: #1a365d;         /* Deep navy blue for readability */
+    --main-color: #00b4d8;         /* Bright aqua/cyan - Tetta's signature */
+    --accent-color: #ff6b9d;       /* Playful pink accent */
 }
 
 html {
@@ -134,6 +134,7 @@ section {
 span {
     color: var(--main-color)
 }
+
 
 /* .multiple-text {
     color: var(--main-color);
@@ -632,3 +633,4 @@ section {
         
     }
 }
+

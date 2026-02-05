@@ -1,47 +1,22 @@
-// Client-side form handling for contact form
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-  const submitBtn = document.getElementById('contact-submit');
-  const feedback = document.getElementById('contact-feedback');
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
-  function showMessage(msg, type = 'info'){
-    feedback.textContent = msg;
-    feedback.className = 'contact-feedback ' + (type === 'success' ? 'success' : (type === 'error' ? 'error' : ''));
-  }
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    showMessage('Sending...', 'info');
-    submitBtn.disabled = true;
+menu.onclick = () => {
+    menu.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+}
 
-    const payload = {
-      name: document.getElementById('contact-name').value.trim(),
-      email: document.getElementById('contact-email').value.trim(),
-      phone: document.getElementById('contact-phone').value.trim(),
-      subject: document.getElementById('contact-subject').value.trim(),
-      message: document.getElementById('contact-message').value.trim(),
-      hp: document.getElementById('contact-hp').value.trim()
-    };
+window.onscroll = () => {
+    menu.classList.remove('bx-x');
+    navbar.classList.remove('active');
+}
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
 
-      const data = await res.json();
-      if (res.ok && data.success) {
-        showMessage('Thanks — your message was sent. I will get back to you soon!', 'success');
-        form.reset();
-      } else {
-        showMessage((data && data.error) ? data.error : 'Failed to send message.', 'error');
-      }
-    } catch (err) {
-      showMessage('Network error. Please try again later.', 'error');
-    }
-
-    submitBtn.disabled = false;
-  });
-});
+const typed = new Typed('.multiple-text', {
+      strings: ['Computer Science Graduate', 'Networking and Systems Enthusiast', 'Vibe Coder', 'Freelancer'],
+      typeSpeed: 60,
+      backspeed: 60,
+      backDelay: 1200,
+      loop: true
+    });

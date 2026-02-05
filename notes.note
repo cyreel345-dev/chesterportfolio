@@ -1,0 +1,82 @@
+:root {
+    --bg-color: #fff;
+    --snd-bg-color: #d5fdf9;
+    --text-color: #000;
+    --main-color: #007f73;
+
+}
+
+
+:root {
+    /* Core Colors */
+    --bg-color: #ffffff;
+    --snd-bg-color: #f0fdff;       /* Very pale aqua */
+    --text-color: #1e3a5f;         /* Navy blue */
+    --main-color: #00b7c2;         /* Turquoise - Tetta's color */
+    
+    /* Accent Colors */
+    --accent-1: #ff8fab;           /* Coral pink */
+    --accent-2: #a0e7e5;           /* Mint green */
+    --accent-3: #ffd166;           /* Sunny yellow */
+    
+    /* Gradients */
+    --gradient-main: linear-gradient(135deg, #00b7c2, #a0e7e5);
+    --gradient-accent: linear-gradient(135deg, #ff8fab, #ffd166);
+    
+    /* Shadows */
+    --shadow-color: rgba(0, 183, 194, 0.1);
+}
+
+
+
+
+code for js
+
+
+// Client-side form handling for contact form
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  const submitBtn = document.getElementById('contact-submit');
+  const feedback = document.getElementById('contact-feedback');
+
+  function showMessage(msg, type = 'info'){
+    feedback.textContent = msg;
+    feedback.className = 'contact-feedback ' + (type === 'success' ? 'success' : (type === 'error' ? 'error' : ''));
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    showMessage('Sending...', 'info');
+    submitBtn.disabled = true;
+
+    const payload = {
+      name: document.getElementById('contact-name').value.trim(),
+      email: document.getElementById('contact-email').value.trim(),
+      phone: document.getElementById('contact-phone').value.trim(),
+      subject: document.getElementById('contact-subject').value.trim(),
+      message: document.getElementById('contact-message').value.trim(),
+      hp: document.getElementById('contact-hp').value.trim()
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        showMessage('Thanks — your message was sent. I will get back to you soon!', 'success');
+        form.reset();
+      } else {
+        showMessage((data && data.error) ? data.error : 'Failed to send message.', 'error');
+      }
+    } catch (err) {
+      showMessage('Network error. Please try again later.', 'error');
+    }
+
+    submitBtn.disabled = false;
+  });
+});
