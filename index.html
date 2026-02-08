@@ -143,18 +143,16 @@ And starlight in your eyes of blue"</p>
         <h2 class="heading">Say <span>Hello</span></h2>
         <p class="contact-subtitle">Got something to say? Drop a message.</p>
 
-        <form id="contact-form" action="#">
+        <form id="contact-form">
+            <input type="hidden" name="access_key" value="59d39cc9-4cf4-4c51-ab4c-4b1c254b9974">
+            <input type="hidden" name="subject" value="New message from your portfolio">
+            <input type="checkbox" name="botcheck" style="display: none;">
+
             <div class="input-box">
                 <input type="text" name="name" id="contact-name" placeholder="Name (optional)">
                 <input type="email" name="email" id="contact-email" placeholder="Email (optional)">
             </div>
             <textarea name="message" id="contact-message" rows="6" cols="30" placeholder="Your message" required></textarea>
-
-            <!-- honeypot -->
-            <div class="honeypot-wrapper" aria-hidden="true">
-                <label class="honeypot-label">Leave this field blank</label>
-                <input type="text" name="hp" id="contact-hp" class="honeypot" autocomplete="off" tabindex="-1">
-            </div>
 
             <div id="contact-feedback" class="contact-feedback" role="status" aria-live="polite"></div>
             <button type="submit" id="contact-submit" class="btn">Send</button>
