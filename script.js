@@ -1,7 +1,6 @@
 let menu = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
-
 menu.onclick = () => {
     menu.classList.toggle('bx-x');
     navbar.classList.toggle('active');
@@ -12,11 +11,10 @@ window.onscroll = () => {
     navbar.classList.remove('active');
 }
 
-
 const typed = new Typed('.multiple-text', {
-      strings: ['Computer Scientist', 'Computer Enthusiast', 'Vibe Coder', 'Freelancer'],
-      typeSpeed: 60,
-      backspeed: 60,
-      backDelay: 1200,
-      loop: true
-    });
+    strings: ['observer', 'gamer', 'viewer', 'listener'],
+    typeSpeed: 70,
+    backSpeed: 50,
+    backDelay: 2000,
+    loop: true
+});
