@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Chester Vonne</title>
 </head>
-<body>
+<body class="loading">
 
     <!-- Header -->
     <header class="header">
@@ -17,6 +17,7 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#interests">Interests</a>
+            <a href="#picks">Top Picks</a>
             <a href="#watching">Watching</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -47,55 +48,130 @@ And starlight in your eyes of blue"</p>
 
     <!-- About -->
     <section class="about" id="about">
-        <div class="about-content">
+        <div class="about-content reveal">
             <h2 class="heading">About <span>Me</span></h2>
             <p>I don't really talk much. But when a topic hooks me in, I can go on for hours. Anime, games, movies, music — these are the things that pull me into conversation.</p>
             <p>I like to play it slow. Stay low key. I've always been the curious type — the kid who would flip through books about different animals and faraway places on earth just to see what's out there.</p>
             <p>I love computers and building software, but this isn't about work. This is just me.</p>
         </div>
-        <div class="about-img">
+        <div class="about-img reveal">
             <img src="assets/about-img.png" alt="About Chester">
         </div>
     </section>
 
     <!-- Interests -->
     <section class="interests" id="interests">
-        <h2 class="heading">What I <span>Like</span></h2>
+        <h2 class="heading reveal">What I <span>Like</span></h2>
         <div class="interests-container">
-
-            <div class="interest-card">
+            <div class="interest-card reveal">
                 <i class='bx bx-movie-play'></i>
                 <h3>Movies & Shows</h3>
                 <p>Drama, sci-fi, action — anything with a great ending or a plottwist that hits hard. Interstellar, The Pianist, Bohemian Rhapsody, The Good Doctor, Band of Brothers, Supernatural, Walking Dead, Generation Kill, IT, From, The Whale. The list never really ends.</p>
             </div>
-
-            <div class="interest-card">
+            <div class="interest-card reveal">
                 <i class='bx bx-tv'></i>
                 <h3>Anime</h3>
                 <p>Frieren, Attack on Titan, Chainsaw Man, Heavenly Delusion, The Angel Next Door Spoils Me Rotten — and way too many more to list. If it's got a solid story, I've probably watched it or it's on my list.</p>
             </div>
-
-            <div class="interest-card">
+            <div class="interest-card reveal">
                 <i class='bx bx-game'></i>
                 <h3>Gaming</h3>
                 <p>One of the things I can always fall back on. Whether it's getting lost in a story-driven game or just unwinding after a long day, gaming has always been a constant.</p>
             </div>
-
-            <div class="interest-card">
+            <div class="interest-card reveal">
                 <i class='bx bx-music'></i>
                 <h3>Music</h3>
                 <p>Always there in the background. Music fills the silence and sets the mood for everything else I do. It's the one thing that ties all the other interests together.</p>
             </div>
+        </div>
+    </section>
 
+    <!-- Top Picks -->
+    <section class="picks" id="picks">
+        <h2 class="heading reveal">Top <span>Picks</span></h2>
+        <div class="picks-container">
+            <div class="pick-card reveal">
+                <div class="pick-icon"><i class='bx bx-film'></i></div>
+                <div class="pick-info">
+                    <h4>Interstellar</h4>
+                    <span class="pick-tag">Movie</span>
+                    <p>Time is relative. Love isn't.</p>
+                </div>
+            </div>
+            <div class="pick-card reveal">
+                <div class="pick-icon"><i class='bx bx-tv'></i></div>
+                <div class="pick-info">
+                    <h4>Frieren</h4>
+                    <span class="pick-tag">Anime</span>
+                    <p>What does it mean to truly know someone?</p>
+                </div>
+            </div>
+            <div class="pick-card reveal">
+                <div class="pick-icon"><i class='bx bx-tv'></i></div>
+                <div class="pick-info">
+                    <h4>Attack on Titan</h4>
+                    <span class="pick-tag">Anime</span>
+                    <p>Freedom always comes at a cost.</p>
+                </div>
+            </div>
+            <div class="pick-card reveal">
+                <div class="pick-icon"><i class='bx bx-film'></i></div>
+                <div class="pick-info">
+                    <h4>The Pianist</h4>
+                    <span class="pick-tag">Movie</span>
+                    <p>Music survives everything.</p>
+                </div>
+            </div>
+            <div class="pick-card reveal">
+                <div class="pick-icon"><i class='bx bx-film'></i></div>
+                <div class="pick-info">
+                    <h4>Band of Brothers</h4>
+                    <span class="pick-tag">Series</span>
+                    <p>I served in a company of heroes.</p>
+                </div>
+            </div>
+            <div class="pick-card reveal">
+                <div class="pick-icon"><i class='bx bx-tv'></i></div>
+                <div class="pick-info">
+                    <h4>Chainsaw Man</h4>
+                    <span class="pick-tag">Anime</span>
+                    <p>Chaotic in the best way possible.</p>
+                </div>
+            </div>
+            <div class="pick-card reveal">
+                <div class="pick-icon"><i class='bx bx-film'></i></div>
+                <div class="pick-info">
+                    <h4>Bohemian Rhapsody</h4>
+                    <span class="pick-tag">Movie</span>
+                    <p>The story behind the legend.</p>
+                </div>
+            </div>
+            <div class="pick-card reveal">
+                <div class="pick-icon"><i class='bx bx-film'></i></div>
+                <div class="pick-info">
+                    <h4>The Whale</h4>
+                    <span class="pick-tag">Movie</span>
+                    <p>Honesty hits the hardest.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Random Quote -->
+    <section class="quotes" id="quotes">
+        <div class="quote-box reveal">
+            <i class='bx bxs-quote-left quote-icon'></i>
+            <p id="quote-text" class="quote-text"></p>
+            <span id="quote-source" class="quote-source"></span>
+            <button id="quote-btn" class="btn quote-btn"><i class='bx bx-refresh'></i> Another one</button>
         </div>
     </section>
 
     <!-- Currently Watching -->
     <section class="watching" id="watching">
-        <h2 class="heading">Currently <span>Watching</span></h2>
+        <h2 class="heading reveal">Currently <span>Watching</span></h2>
         <div class="watching-container">
-
-            <div class="watch-item">
+            <div class="watch-item reveal">
                 <div class="watch-label">Anime</div>
                 <div class="watch-list">
                     <div class="watch-entry">
@@ -114,8 +190,7 @@ And starlight in your eyes of blue"</p>
                     </div>
                 </div>
             </div>
-
-            <div class="watch-item">
+            <div class="watch-item reveal">
                 <div class="watch-label">Series</div>
                 <div class="watch-list">
                     <div class="watch-entry">
@@ -134,16 +209,24 @@ And starlight in your eyes of blue"</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- Spotify -->
+    <section class="spotify-section" id="spotify">
+        <h2 class="heading reveal">What I <span>Listen To</span></h2>
+        <div class="spotify-container reveal">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <p class="spotify-note">Replace this with your own Spotify playlist embed</p>
         </div>
     </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
-        <h2 class="heading">Say <span>Hello</span></h2>
-        <p class="contact-subtitle">Got something to say? Drop a message.</p>
+        <h2 class="heading reveal">Say <span>Hello</span></h2>
+        <p class="contact-subtitle reveal">Got something to say? Drop a message.</p>
 
-        <form id="contact-form">
+        <form id="contact-form" class="reveal">
             <input type="hidden" name="access_key" value="59d39cc9-4cf4-4c51-ab4c-4b1c254b9974">
             <input type="hidden" name="subject" value="New message from your portfolio">
             <input type="checkbox" name="botcheck" style="display: none;">
@@ -169,6 +252,11 @@ And starlight in your eyes of blue"</p>
         </div>
         <p class="copyright">2026 &copy; Chester Vonne. All Rights Reserved.</p>
     </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class='bx bx-chevron-up'></i>
+    </button>
 
     <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
