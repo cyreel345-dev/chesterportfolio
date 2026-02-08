@@ -478,11 +478,16 @@ span {
 
 @media (max-width: 991px) {
     .header {
-        padding: 2rem 3%;
+        padding: 1.6rem 3%;
+    }
+
+    .logo {
+        font-size: 2.2rem;
     }
 
     section {
-        padding: 10rem 3%;
+        min-height: auto;
+        padding: 8rem 5% 4rem;
     }
 
     .interests-container {
@@ -540,7 +545,8 @@ span {
     .home {
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
+        gap: 2rem;
+        min-height: 100vh;
     }
 
     .home-content {
@@ -551,20 +557,43 @@ span {
         font-size: 2.2rem;
     }
 
+    .home-content h3:nth-of-type(2) {
+        white-space: normal;
+    }
+
     .home-content h1 {
         font-size: 4.2rem;
     }
 
+    .tagline {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        max-width: 36ch;
+        margin: 1.5rem auto 0;
+    }
+
     .home-img img {
-        width: 55vw;
-        max-width: 240px;
+        width: 50vw;
+        max-width: 200px;
         margin-top: 2rem;
+    }
+
+    .social-media a {
+        width: 44px;
+        height: 44px;
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 1.2rem 3rem;
+        font-size: 1.6rem;
     }
 
     .about {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 3rem;
+        gap: 2.5rem;
+        padding: 6rem 5% 4rem;
     }
 
     .about-content h2 {
@@ -577,8 +606,28 @@ span {
     }
 
     .about-img img {
-        width: 55vw;
-        max-width: 240px;
+        width: 50vw;
+        max-width: 200px;
+    }
+
+    .interest-card {
+        padding: 2.5rem 2rem;
+    }
+
+    .watch-item {
+        padding: 2.5rem 2rem;
+    }
+
+    .contact form .input-box input,
+    .contact form textarea {
+        padding: 1.4rem 1.4rem;
+        font-size: 1.6rem;
+    }
+
+    .contact form .btn {
+        width: 100%;
+        padding: 1.4rem 2rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -587,33 +636,76 @@ span {
         font-size: 4rem;
         margin-bottom: 2rem;
     }
-
-    .about {
-        padding: 6rem 5%;
-    }
 }
 
-@media (max-width: 617px) {
+@media (max-width: 480px) {
     html {
         font-size: 50%;
     }
 
+    .header {
+        padding: 1.4rem 4%;
+    }
+
+    .logo {
+        font-size: 1.9rem;
+    }
+
+    section {
+        padding: 7rem 4% 3rem;
+    }
+
+    .home {
+        padding-top: 8rem;
+    }
+
+    .home-content h1 {
+        font-size: 3.6rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.9rem;
+    }
+
+    .tagline {
+        font-size: 1.3rem;
+        max-width: 30ch;
+    }
+
     .home-img img {
-        width: 60vw;
-        max-width: 200px;
-        margin-top: 4rem;
+        width: 55vw;
+        max-width: 180px;
     }
 
-    .about-img img {
-        width: 60vw;
-        max-width: 200px;
+    .heading {
+        font-size: 3.4rem;
+        margin-bottom: 1.8rem;
     }
 
-    .contact form .input-box {
-        flex-direction: column;
+    .about-content p {
+        font-size: 1.5rem;
     }
 
-    .contact form .input-box input {
-        width: 100%;
+    .interest-card h3 {
+        font-size: 1.9rem;
+    }
+
+    .interest-card p {
+        font-size: 1.4rem;
+    }
+
+    .watch-entry h4 {
+        font-size: 1.5rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .footer .social a {
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        font-size: 1.8rem;
     }
 }
