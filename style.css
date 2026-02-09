@@ -640,22 +640,48 @@ body {
     color: inherit;
 }
 
-/* Spotify */
+/* What I Listen To */
 
-.spotify-section {
+.listen-section {
     background: var(--snd-bg-color);
 }
 
-.spotify-container {
-    max-width: 700px;
+.listen-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-.spotify-note {
+.listen-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.listen-card iframe {
+    display: block;
+}
+
+.listen-label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.listen-note {
     text-align: center;
     font-size: 1.3rem;
     color: var(--text-muted);
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     font-style: italic;
 }
 
@@ -1059,6 +1085,11 @@ body {
 
     .watch-item {
         padding: 2.5rem 2rem;
+    }
+
+    .listen-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
     }
 
     .playing-container {
