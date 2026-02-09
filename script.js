@@ -24,6 +24,16 @@ window.addEventListener('load', () => {
     document.body.classList.remove('loading');
 });
 
+// Scroll progress bar
+const scrollProgress = document.getElementById('scroll-progress');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    scrollProgress.style.width = scrollPercent + '%';
+});
+
 // Scroll reveal
 const revealElements = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
@@ -70,6 +80,59 @@ backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// Floating particles
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas() {
+    const home = document.querySelector('.home');
+    canvas.width = home.offsetWidth;
+    canvas.height = home.offsetHeight;
+}
+
+function createParticles() {
+    particles = [];
+    const count = Math.floor(canvas.width * canvas.height / 12000);
+    for (let i = 0; i < count; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 1.5 + 0.5,
+            speedX: (Math.random() - 0.5) * 0.3,
+            speedY: (Math.random() - 0.5) * 0.3,
+            opacity: Math.random() * 0.3 + 0.1
+        });
+    }
+}
+
+function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200, 200, 200, ${p.opacity})`;
+        ctx.fill();
+    });
+    requestAnimationFrame(animateParticles);
+}
+
+resizeCanvas();
+createParticles();
+animateParticles();
+window.addEventListener('resize', () => {
+    resizeCanvas();
+    createParticles();
+});
+
 // Random quote generator
 const quotes = [
     { text: "It's time to be reborn, young man.", source: "Koyuki's Father — Demon Slayer" },
@@ -102,6 +165,27 @@ function showRandomQuote() {
 
 showRandomQuote();
 quoteBtn.addEventListener('click', showRandomQuote);
+
+// Konami Code Easter Egg
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiIndex = 0;
+const konamiOverlay = document.getElementById('konami-overlay');
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+            konamiOverlay.classList.add('active');
+            konamiIndex = 0;
+        }
+    } else {
+        konamiIndex = 0;
+    }
+});
+
+konamiOverlay.addEventListener('click', () => {
+    konamiOverlay.classList.remove('active');
+});
 
 // Contact form
 const form = document.getElementById('contact-form');
@@ -146,4 +230,49 @@ form.addEventListener('submit', async (e) => {
 
     submitBtn.disabled = false;
     submitBtn.textContent = 'Send';
+});
+
+// Recommend form
+const recForm = document.getElementById('recommend-form');
+const recFeedback = document.getElementById('recommend-feedback');
+const recSubmit = document.getElementById('recommend-submit');
+
+recForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const input = document.getElementById('recommend-input');
+    if (input.value.trim().length < 2) {
+        recFeedback.textContent = 'Type something first.';
+        recFeedback.className = 'contact-feedback error';
+        return;
+    }
+
+    recSubmit.disabled = true;
+    recSubmit.textContent = 'Sending...';
+    recFeedback.textContent = '';
+    recFeedback.className = 'contact-feedback';
+
+    try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(Object.fromEntries(new FormData(recForm)))
+        });
+        const data = await res.json();
+
+        if (data.success) {
+            recFeedback.textContent = "Got it. I'll check it out.";
+            recFeedback.className = 'contact-feedback success';
+            recForm.reset();
+        } else {
+            recFeedback.textContent = 'Something went wrong. Try again.';
+            recFeedback.className = 'contact-feedback error';
+        }
+    } catch {
+        recFeedback.textContent = 'Failed to send. Check your connection.';
+        recFeedback.className = 'contact-feedback error';
+    }
+
+    recSubmit.disabled = false;
+    recSubmit.textContent = 'Send';
 });
