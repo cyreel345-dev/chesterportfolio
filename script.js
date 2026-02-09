@@ -144,7 +144,10 @@ const quotes = [
     { text: "The survival of man depends on his ability to keep fear from consuming him.", source: "Dr. Szpilman — The Pianist" },
     { text: "I served in a company of heroes.", source: "Major Richard Winters — Band of Brothers" },
     { text: "I'm not gonna die. I have too many things I still want to do.", source: "Denji — Chainsaw Man" },
-    { text: "Is this the real life? Is this just fantasy?", source: "Freddie Mercury — Bohemian Rhapsody" }
+    { text: "Is this the real life? Is this just fantasy?", source: "Freddie Mercury — Bohemian Rhapsody" },
+    { text: "While there is life, there is hope.", source: "Stephen Hawking — The Theory of Everything" },
+    { text: "There should be no boundaries to human endeavor.", source: "Stephen Hawking — The Theory of Everything" },
+    { text: "However difficult life may seem, there is always something you can do and succeed at.", source: "Stephen Hawking — The Theory of Everything" }
 ];
 
 let lastQuoteIndex = -1;
