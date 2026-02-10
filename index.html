@@ -9,12 +9,18 @@
 </head>
 <body class="loading">
 
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scroll-progress"></div>
 
     <!-- Header -->
     <header class="header">
-        <a href="#home" class="logo">This is my World</a>
+        <a href="#home" class="logo">WORK STILL IN PROGRESS ... </a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class='bx bx-moon'></i>
+        </button>
         <i class='bx bx-menu' id="menu-icon"></i>
         <nav class="navbar">
             <a href="#home">Home</a>
@@ -41,10 +47,11 @@ And decided to create a dream come true
 So they sprinkled moon dust in your hair of gold
 And starlight in your eyes of blue"</p>
             <div class="social-media">
-                <a href="https://github.com/JayaTci" target="_blank" rel="noopener"><i class="bx bxl-github"></i></a>
-                <a href="https://www.facebook.com/ChesterVon09" target="_blank" rel="noopener"><i class='bx bxl-facebook'></i></a>
-                <a href="https://www.instagram.com/chesterr2001/" target="_blank" rel="noopener"><i class='bx bxl-instagram'></i></a>
-                <a href="https://x.com/Cairel11918346" target="_blank" rel="noopener"><i class='bx bxl-twitter'></i></a>
+                <a href="https://github.com/JayaTci" target="_blank" rel="noopener"><i class='bx bxl-github'></i></a>
+                <a href="https://discordapp.com/users/840226172260450334" target="_blank" rel="noopener"><i class='bx bxl-discord-alt'></i></a>
+                <a href="https://steamcommunity.com/profiles/76561198320556314/" target="_blank" rel="noopener"><i class='bx bxl-steam' ></i></a>
+                <a href="https://www.reddit.com/user/Melodic_Bit4772/" target="_blank" rel="noopener"><i class='bx bxl-reddit'></i></a>
+                <a href="https://www.twitch.tv/jayatci543" target="_blank" rel="noopener"><i class='bx bxl-twitch' ></i></a>
             </div>
               <a href="assets/Chester_Vonne_CV.pdf" class="btn" target="_blank" rel="noopener">Learn more about me</a>
         </div>
@@ -52,13 +59,13 @@ And starlight in your eyes of blue"</p>
 
     <!-- About -->
     <section class="about" id="about">
-        <div class="about-content reveal">
+        <div class="about-content reveal-left">
             <h2 class="heading">About <span>Me</span></h2>
             <p>I don't really talk much. But when a topic hooks me in, I can go on for hours. Anime, games, movies, music — these are the things that pull me into conversation.</p>
             <p>I like to play it slow. Stay low key. I've always been the curious type — the kid who would flip through books about different animals and faraway places on earth just to see what's out there.</p>
             <p>I love computers and building software, but this isn't about work. This is just me.</p>
         </div>
-        <div class="about-img reveal">
+        <div class="about-img reveal-right">
             <img src="assets/about-img.png" alt="About Chester">
         </div>
     </section>
@@ -67,22 +74,22 @@ And starlight in your eyes of blue"</p>
     <section class="interests" id="interests">
         <h2 class="heading reveal">What I <span>Like</span></h2>
         <div class="interests-container">
-            <div class="interest-card reveal">
+            <div class="interest-card reveal-left">
                 <i class='bx bx-movie-play'></i>
                 <h3>Movies & Shows</h3>
                 <p>Drama, sci-fi, action — anything with a great ending or a plottwist that hits hard. Interstellar, The Pianist, Bohemian Rhapsody, The Good Doctor, Band of Brothers, Supernatural, Walking Dead, Generation Kill, IT, From, The Whale. The list never really ends.</p>
             </div>
-            <div class="interest-card reveal">
+            <div class="interest-card reveal-right">
                 <i class='bx bx-tv'></i>
                 <h3>Anime</h3>
                 <p>Frieren, Attack on Titan, Chainsaw Man, Heavenly Delusion, The Angel Next Door Spoils Me Rotten — and way too many more to list. If it's got a solid story, I've probably watched it or it's on my list.</p>
             </div>
-            <div class="interest-card reveal">
+            <div class="interest-card reveal-left">
                 <i class='bx bx-game'></i>
                 <h3>Gaming</h3>
                 <p>One of the things I can always fall back on. Whether it's getting lost in a story-driven game or just unwinding after a long day, gaming has always been a constant.</p>
             </div>
-            <div class="interest-card reveal">
+            <div class="interest-card reveal-right">
                 <i class='bx bx-music'></i>
                 <h3>Music</h3>
                 <p>Always there in the background. Music fills the silence and sets the mood for everything else I do. It's the one thing that ties all the other interests together.</p>
@@ -94,7 +101,7 @@ And starlight in your eyes of blue"</p>
     <section class="picks" id="picks">
         <h2 class="heading reveal">Top <span>Picks</span></h2>
         <div class="picks-container">
-            <div class="pick-card reveal">
+            <div class="pick-card reveal-scale">
                 <div class="pick-icon"><i class='bx bx-film'></i></div>
                 <div class="pick-info">
                     <h4>Interstellar</h4>
@@ -102,7 +109,15 @@ And starlight in your eyes of blue"</p>
                     <p>Time is relative. Love isn't.</p>
                 </div>
             </div>
-            <div class="pick-card reveal">
+            <div class="pick-card reveal-scale">
+                <div class="pick-icon"><i class='bx bx-tv'></i></div>
+                <div class="pick-info">
+                    <h4>Gifted Hands: The Ben Carson Story</h4>
+                    <span class="pick-tag">MOVIE</span>
+                    <p>No knowledge is ever wasted.</p>
+                </div>
+            </div>
+            <div class="pick-card reveal-scale">
                 <div class="pick-icon"><i class='bx bx-tv'></i></div>
                 <div class="pick-info">
                     <h4>Frieren</h4>
@@ -110,7 +125,7 @@ And starlight in your eyes of blue"</p>
                     <p>What does it mean to truly know someone?</p>
                 </div>
             </div>
-            <div class="pick-card reveal">
+            <div class="pick-card reveal-scale">
                 <div class="pick-icon"><i class='bx bx-tv'></i></div>
                 <div class="pick-info">
                     <h4>Attack on Titan</h4>
@@ -118,7 +133,7 @@ And starlight in your eyes of blue"</p>
                     <p>Freedom always comes at a cost.</p>
                 </div>
             </div>
-            <div class="pick-card reveal">
+            <div class="pick-card reveal-scale">
                 <div class="pick-icon"><i class='bx bx-film'></i></div>
                 <div class="pick-info">
                     <h4>The Pianist</h4>
@@ -126,7 +141,7 @@ And starlight in your eyes of blue"</p>
                     <p>Music survives everything.</p>
                 </div>
             </div>
-            <div class="pick-card reveal">
+            <div class="pick-card reveal-scale">
                 <div class="pick-icon"><i class='bx bx-film'></i></div>
                 <div class="pick-info">
                     <h4>Band of Brothers</h4>
@@ -134,7 +149,7 @@ And starlight in your eyes of blue"</p>
                     <p>I served in a company of heroes.</p>
                 </div>
             </div>
-            <div class="pick-card reveal">
+            <div class="pick-card reveal-scale">
                 <div class="pick-icon"><i class='bx bx-tv'></i></div>
                 <div class="pick-info">
                     <h4>Chainsaw Man</h4>
@@ -142,7 +157,7 @@ And starlight in your eyes of blue"</p>
                     <p>Chaotic in the best way possible.</p>
                 </div>
             </div>
-            <div class="pick-card reveal">
+            <div class="pick-card reveal-scale">
                 <div class="pick-icon"><i class='bx bx-film'></i></div>
                 <div class="pick-info">
                     <h4>Bohemian Rhapsody</h4>
@@ -150,7 +165,7 @@ And starlight in your eyes of blue"</p>
                     <p>The story behind the legend.</p>
                 </div>
             </div>
-            <div class="pick-card reveal">
+            <div class="pick-card reveal-scale">
                 <div class="pick-icon"><i class='bx bx-film'></i></div>
                 <div class="pick-info">
                     <h4>The Whale</h4>
@@ -158,7 +173,7 @@ And starlight in your eyes of blue"</p>
                     <p>Honesty hits the hardest.</p>
                 </div>
             </div>
-            <div class="pick-card reveal">
+            <div class="pick-card reveal-scale">
                 <div class="pick-icon"><i class='bx bx-film'></i></div>
                 <div class="pick-info">
                     <h4>The Theory of Everything</h4>
@@ -183,7 +198,7 @@ And starlight in your eyes of blue"</p>
     <section class="watching" id="watching">
         <h2 class="heading reveal">Currently <span>Watching</span></h2>
         <div class="watching-container">
-            <div class="watch-item reveal">
+            <div class="watch-item reveal-left">
                 <div class="watch-label">Anime</div>
                 <div class="watch-list">
                     <div class="watch-entry">
@@ -202,7 +217,7 @@ And starlight in your eyes of blue"</p>
                     </div>
                 </div>
             </div>
-            <div class="watch-item reveal">
+            <div class="watch-item reveal-right">
                 <div class="watch-label">Series</div>
                 <div class="watch-list">
                     <div class="watch-entry">
@@ -305,10 +320,11 @@ And starlight in your eyes of blue"</p>
     <!-- Footer -->
     <footer class="footer">
         <div class="social">
-            <a href="https://github.com/JayaTci" target="_blank" rel="noopener"><i class="bx bxl-github"></i></a>
-            <a href="https://www.facebook.com/ChesterVon09" target="_blank" rel="noopener"><i class='bx bxl-facebook'></i></a>
-            <a href="https://www.instagram.com/chesterr2001/" target="_blank" rel="noopener"><i class='bx bxl-instagram'></i></a>
-            <a href="https://x.com/Cairel11918346" target="_blank" rel="noopener"><i class='bx bxl-twitter'></i></a>
+                <a href="https://github.com/JayaTci" target="_blank" rel="noopener"><i class='bx bxl-github'></i></a>
+                <a href="https://discordapp.com/users/840226172260450334" target="_blank" rel="noopener"><i class='bx bxl-discord-alt'></i></a>
+                <a href="https://steamcommunity.com/profiles/76561198320556314/" target="_blank" rel="noopener"><i class='bx bxl-steam' ></i></a>
+                <a href="https://www.reddit.com/user/Melodic_Bit4772/" target="_blank" rel="noopener"><i class='bx bxl-reddit'></i></a>
+                <a href="https://www.twitch.tv/jayatci543" target="_blank" rel="noopener"><i class='bx bxl-twitch' ></i></a>
         </div>
         <p class="copyright">2026 &copy; Chester Vonne. All Rights Reserved.</p>
     </footer>

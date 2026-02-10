@@ -135,7 +135,7 @@ window.addEventListener('resize', () => {
 
 // Random quote generator
 const quotes = [
-    { text: "It's time to be reborn, young man.", source: "Koyuki's Father — Demon Slayer" },
+    // { text: "It's time to be reborn, young man.", source: "Koyuki's Father — Demon Slayer" },
     { text: "The world is cruel, but also very beautiful.", source: "Mikasa Ackerman — Attack on Titan" },
     { text: "If you win, you live. If you lose, you die. If you don't fight, you can't win.", source: "Eren Yeager — Attack on Titan" },
     { text: "Even though they were just a small part of my life, those memories are my treasure.", source: "Frieren — Frieren: Beyond Journey's End" },
